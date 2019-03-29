@@ -1,10 +1,10 @@
-package com.yehowah.yemusic;
+package com.yehowah.yemusic.activitys;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-public class MainActivity extends AppCompatActivity {
+import com.yehowah.yemusic.R;
 
+public class MainActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
