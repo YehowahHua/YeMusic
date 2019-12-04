@@ -23,7 +23,14 @@ public class BaseActivity extends Activity {
         return findViewById(id);
     }
 
-    //初始化NavigationBar
+
+
+    /**
+     * 初始化NavigationBar
+     * @param isShowBack 后退按钮
+     * @param title 页面名称
+     * @param isShowMe 最右边的me
+     */
     protected void initNavBar(boolean isShowBack,String title,boolean isShowMe){
         mIvBack = (ImageView) fd(R.id.iv_back);
         mIvMe = (ImageView) fd(R.id.iv_me);
@@ -36,7 +43,7 @@ public class BaseActivity extends Activity {
         mIvBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                onBackPressed();
+                onBackPressed();//后退事件
             }
         });
     }

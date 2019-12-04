@@ -52,23 +52,24 @@ public class InputView extends FrameLayout {
             return;
         }
         //通过values下定义的attrs.xml中定义的declare-styleable中获取自定义属性，注意获取之后要释放掉
-        TypedArray typedArray = context.obtainStyledAttributes(attributeSet, R.styleable.inputView);
-        inputIcon = typedArray.getResourceId(R.styleable.inputView_input_icon,R.mipmap.logo);
+        TypedArray typedArray = context.obtainStyledAttributes(attributeSet, R.styleable.inputView);//获取自定义属性
+        inputIcon = typedArray.getResourceId(R.styleable.inputView_input_icon,R.mipmap.logo);//默认logo
         inputHint = typedArray.getString(R.styleable.inputView_input_hint);
         isPassword = typedArray.getBoolean(R.styleable.inputView_is_password,false);
-        typedArray.recycle();
+        typedArray.recycle();//需要手动释放
 
         //绑定layout布局
-        mView = LayoutInflater.from(context).inflate(R.layout.input_view,this);
+        mView = LayoutInflater.from(context).inflate(R.layout.input_view,this,false);
         mIvIcon = mView.findViewById(R.id.iv_icon);
         mEtInput = mView.findViewById(R.id.et_input);
 
         //布局关联属性
         mIvIcon.setImageResource(inputIcon);
         mEtInput.setHint(inputHint);
-        mEtInput.setInputType(isPassword? InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_PASSWORD : InputType.TYPE_CLASS_PHONE);
+        mEtInput.setInputType(isPassword? InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_PASSWORD
+                : InputType.TYPE_CLASS_PHONE);
 
-        addView(mView);
+        addView(mView);//添加到inputView中
 
 
     }

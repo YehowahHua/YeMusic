@@ -18,7 +18,6 @@ public class WelcomeActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_welcome);
         init();
-
     }
 
     private void init() {
@@ -26,7 +25,7 @@ public class WelcomeActivity extends BaseActivity {
         mTimer.schedule(new TimerTask() {
             @Override
             public void run() {
-                Log.e(TAG, "run: 当前线程为 "+Thread.currentThread() );
+                Log.e(TAG, "run: 当前线程为 "+Thread.currentThread() );//run是在主线程
 //                toMain();
                 toLogin();
             }
@@ -36,11 +35,11 @@ public class WelcomeActivity extends BaseActivity {
     /**
      * 跳转到MainActivity
      */
-    private void toMain(){
-        Intent intent = new Intent(this,MainActivity.class);
-        startActivity(intent);
-        finish();//关闭当前界面
-    }
+//    private void toMain(){
+//        Intent intent = new Intent(this,MainActivity.class);
+//        startActivity(intent);
+//        finish();//关闭当前界面
+//    }
 
     /**
      *
