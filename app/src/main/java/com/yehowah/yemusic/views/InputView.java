@@ -13,9 +13,10 @@ import android.widget.ImageView;
 import com.yehowah.yemusic.R;
 
 /**
- * 1.input_icon:输入框前面的图标
- * 2.input_hint:输入框的提示内容
- * 3.is_password:输入的内容是否需要以密文的形式展示
+ * 自定义view的可配置属性（values/attrs.xml）
+ *      1.input_icon:输入框前面的图标
+ *      2.input_hint:输入框的提示内容
+ *      3.is_password:输入的内容是否需要以密文的形式展示
  */
 public class InputView extends FrameLayout {
     private int inputIcon;
@@ -66,14 +67,16 @@ public class InputView extends FrameLayout {
         //布局关联属性
         mIvIcon.setImageResource(inputIcon);
         mEtInput.setHint(inputHint);
-        mEtInput.setInputType(isPassword? InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_PASSWORD
-                : InputType.TYPE_CLASS_PHONE);
+        mEtInput.setInputType(isPassword ? InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_PASSWORD : InputType.TYPE_CLASS_PHONE);
 
-        addView(mView);//添加到inputView中
-
+        addView(mView);//FrameLayout中的方法
 
     }
 
+    /**
+     * 返回输入内容
+     * @return
+     */
     public String getInputStr(){
         return mEtInput.getText().toString().trim();
     }

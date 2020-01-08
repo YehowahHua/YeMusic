@@ -9,7 +9,8 @@ import com.yehowah.yemusic.R;
 import java.util.Timer;
 import java.util.TimerTask;
 
-//3s后跳转到MainActivity
+//1.延迟3s后，
+//2.跳转到其他Activity
 public class WelcomeActivity extends BaseActivity {
     private static final String TAG = "WelcomeActivity";
     private Timer mTimer;
@@ -18,6 +19,7 @@ public class WelcomeActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_welcome);
         init();
+
     }
 
     private void init() {
@@ -42,7 +44,7 @@ public class WelcomeActivity extends BaseActivity {
 //    }
 
     /**
-     *
+     * 跳转到登录界面
      */
     private void toLogin(){
         Intent intent = new Intent(this,LoginActivity.class);
