@@ -2,6 +2,7 @@ package com.yehowah.yemusic.activitys;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 
 import com.yehowah.yemusic.R;
@@ -10,6 +11,7 @@ import com.yehowah.yemusic.views.InputView;
 
 //
 public class LoginActivity extends BaseActivity {
+    private static final String TAG = "LoginActivity";
 
     private InputView mInputPhone, mInputPassword;
 
@@ -46,10 +48,20 @@ public class LoginActivity extends BaseActivity {
         String password = mInputPassword.getInputStr();
         //验证用户输入是否合法
         if (!UserUtils.yalidateLogin(this, phone, password)){
+            Log.e(TAG, "onCommitClick: 用户输入不合法");
             return;
         }
+        Log.i(TAG, "onCommitClick: 跳转到Main页面");
         //跳转到应用主页
         Intent intent = new Intent(this,MainActivity.class);
         startActivity(intent);
+        Log.i(TAG, "onCommitClick: 跳转到Main页面");
+    }
+
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        Log.e(TAG, "onDestroy: ");
     }
 }

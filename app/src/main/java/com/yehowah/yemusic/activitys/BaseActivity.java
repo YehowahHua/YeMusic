@@ -1,6 +1,7 @@
 package com.yehowah.yemusic.activitys;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.IdRes;
 import android.view.View;
@@ -46,5 +47,15 @@ public class BaseActivity extends Activity {
                 onBackPressed();//后退事件
             }
         });
+
+        mIvMe.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //跳转到个人中心页面
+                startActivity(new Intent(BaseActivity.this, MeActivity.class));
+            }
+        });
+
+
     }
 }

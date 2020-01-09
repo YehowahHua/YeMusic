@@ -7,5 +7,6 @@
     android:orientation="vertical"
     tools:context=".activitys.WelcomeActivity">
 
+    <include layout="@layout/nav_bar"/>
 
 </LinearLayout>

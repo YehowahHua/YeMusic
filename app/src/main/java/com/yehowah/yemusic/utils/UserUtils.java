@@ -1,10 +1,12 @@
 package com.yehowah.yemusic.utils;
 
 import android.content.Context;
+import android.content.Intent;
 import android.text.TextUtils;
 import android.widget.Toast;
 
 import com.blankj.utilcode.util.RegexUtils;
+import com.yehowah.yemusic.activitys.LoginActivity;
 
 public class UserUtils {
     /**
@@ -22,5 +24,15 @@ public class UserUtils {
             return false;
         }
         return true;
+    }
+
+
+    /**
+     * 退出登录
+     */
+    public static void logout(Context context){
+        Intent intent = new Intent(context, LoginActivity.class);
+        context.startActivity(intent);
+
     }
 }
