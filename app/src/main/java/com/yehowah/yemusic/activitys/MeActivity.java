@@ -1,5 +1,6 @@
 package com.yehowah.yemusic.activitys;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
@@ -27,7 +28,8 @@ public class MeActivity extends BaseActivity {
      * @param v
      */
     public void  onChangeClick(View v){
-
+        Intent intent = new Intent(this,ChangePasswordActivity.class);
+        startActivity(intent);
     }
 
     /**
